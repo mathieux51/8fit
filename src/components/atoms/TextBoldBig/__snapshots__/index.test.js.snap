@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextBoldBig /> renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ThemeProvider
+    theme={
+      Object {
+        "black": "#292C2F",
+        "bold": 20,
+        "boldBig": 24,
+        "boldBigger": 32,
+        "green": "#26D88C",
+        "grey": "#959798",
+        "lGrey": "#EAEAEA",
+        "medium": 12,
+        "regular": 16,
+        "regularSmall": 12,
+        "white": "#ffffff",
+      }
+    }
+  >
+    <TextBoldBig>
+      test
+    </TextBoldBig>
+  </ThemeProvider>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": "test",
+    },
+    "ref": null,
+    "rendered": "test",
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": "test",
+      },
+      "ref": null,
+      "rendered": "test",
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

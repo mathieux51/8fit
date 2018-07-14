@@ -1,25 +1,25 @@
 import React from "react"
-import { View, Text } from "react-native"
-import { Provider } from "react-redux"
-import styled from "styled-components";
-import configureStore from "../store/configure-store"
-// import Scene from "../components/scene"
+import { Provider, connect } from "react-redux"
+import { ThemeProvider } from "styled-components"
+import configureStore from "store/configure-store"
+import { reduxifyNavigator } from "react-navigation-redux-helpers"
+import RootNavigator from "src/components/RootNavigator"
+import theme from "src/styles/theme"
 
 const store = configureStore()
+const AppWithNavigationState = reduxifyNavigator(RootNavigator, "root")
 
-// const StyledView = styled(View)`
-//   flex: 1;
-//   justify-content: center;
-//   align-items: center;
-//   background-color: papayawhip;
-// `;
+const mapStateToProps = state => ({
+  state: state.nav
+})
+
+const AppNavigator = connect(mapStateToProps)(AppWithNavigationState)
 
 const Root = () => (
   <Provider store={store}>
-    <View>
-      <Text>Hi</Text>
-    </View>
-    {/* <Scene /> */}
+    <ThemeProvider theme={theme}>
+      <AppNavigator />
+    </ThemeProvider>
   </Provider>
 )
 

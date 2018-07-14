@@ -1,14 +1,16 @@
 import { createStore, applyMiddleware } from "redux"
 import thunkMiddleware from "redux-thunk"
-// import createLogger from "redux-logger"
+import reduxLogger from "redux-logger"
+import { createReactNavigationReduxMiddleware } from "react-navigation-redux-helpers"
 import rootReducer from "../reducers"
 
-// const loggerMiddleware = createLogger()
+const reactNavigationMiddleware = createReactNavigationReduxMiddleware(
+  "root",
+  state => state.nav
+)
 
-const createStoreWithMiddleware = applyMiddleware(
-  thunkMiddleware
-  // loggerMiddleware
-)(createStore)
+const middlewares = [thunkMiddleware, reactNavigationMiddleware, reduxLogger]
+const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore)
 
 const configureStore = function(initialState) {
   return createStoreWithMiddleware(rootReducer, initialState)
