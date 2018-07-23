@@ -1,5 +1,9 @@
 # 8fitdemo
 
+# Demo
+
+![Alt Text](demo.gif)
+
 ## To do
 
 - [ ] Fix Button Continue display when toggle software keyboard is disabled
